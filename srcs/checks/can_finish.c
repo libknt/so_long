@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 22:31:10 by keys              #+#    #+#             */
-/*   Updated: 2022/12/11 16:47:23 by keys             ###   ########.fr       */
+/*   Updated: 2023/01/18 16:00:44 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static bool	ft_check_remnant(char **map)
 
 void	ft_check_can_finish(t_maps *maps)
 {
+	//mapを複製して，深さ優先探索(dfs)を用いて，checkを行っている．
 	ft_dfs_flag_ptr(maps);
 	ft_goal_search(maps->player_y, maps->player_x, maps);
 	if (maps->flag == 0)

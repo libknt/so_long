@@ -6,7 +6,7 @@
 /*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:42:25 by keys              #+#    #+#             */
-/*   Updated: 2022/12/12 00:17:52 by keys             ###   ########.fr       */
+/*   Updated: 2023/01/18 15:53:35 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ void	ft_make_map(char *txt, t_maps *maps)
 		free(maps);
 		exit(EXIT_FAILURE);
 	}
+	//再帰関数を用いmapを作成
 	ft_get_map(maps, 0);
 }
