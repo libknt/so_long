@@ -11,12 +11,12 @@ FTDIR		=	libft
 FTNAME		=	$(FTDIR)/libft.a
 FT			=	$(FTNAME)
 
-MLXDIR		=	minilibx
+MLXDIR		=	minilibx-linux
 MLXNAME		= $(MLXDIR)/libmlx.a
 # MLXNAME		= $(MLXDIR)/libmlx_Linux.a
 MLX			=	$(MLXNAME)
-MLX_FLAG	=  -lmlx -framework OpenGL -framework AppKit
-# MLX_FLAGS_LINUX	=	-L$(MLXDIR) -lmlx -lXext -lX11
+# MLX_FLAG	=  -lmlx -framework OpenGL -framework AppKit
+MLX_FLAGS_LINUX	=	-L$(MLXDIR) -lmlx -lXext -lX11
 
 
 SRCS		= 	srcs/main.c	\
@@ -46,7 +46,7 @@ OBJS  = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
-$(NAME):$(OBJS) $(GNL) $(FT) $(MLX)
+$(NAME):$(OBJS) $(MLX) $(GNL) $(FT)
 		$(CC) $^ $(CFLAGS) $(MLX_FLAGS_LINUX) $(MLX_FLAG) -o $@
 
 $(MLX):

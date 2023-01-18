@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyoda <kyoda@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: keys <keys@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/27 02:04:11 by keys              #+#    #+#             */
-/*   Updated: 2022/12/12 19:59:51 by kyoda            ###   ########.fr       */
+/*   Updated: 2023/01/18 15:43:56 by keys             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "../minilibx/mlx.h"
+# include "../minilibx-linux/mlx.h"
 # include "get_next_line.h"
 # include "libft.h"
 
 # define WINSIZ 50
-// # define ESC_KEY 65307
-// # define W_KEY 119
-// # define S_KEY 115
-// # define A_KEY 97
-// # define D_KEY 100
-# define ESC_KEY 53
-# define W_KEY 13
-# define S_KEY 1
-# define A_KEY 0
-# define D_KEY 2
+# define ESC_KEY 65307
+# define W_KEY 119
+# define S_KEY 115
+# define A_KEY 97
+# define D_KEY 100
+// # define ESC_KEY 53
+// # define W_KEY 13
+// # define S_KEY 1
+// # define A_KEY 0
+// # define D_KEY 2
 # define WALL "./images/uz1.xpm"
 # define SPACE "./images/umi.xpm"
 # define PLAYER "./images/sani.xpm"
