@@ -1,7 +1,7 @@
 NAME 		=	so_long
 CC			=	cc
 CFLAGS		=	-Wall -Wextra -Werror
-INCLUDE		=	-I ./include/
+INCLUDE		=	-I ./include/ -I ./minilibx-linux
 
 GNLDIR		=	get_next_line
 GNLNAME		=	$(GNLDIR)/gnl.a
@@ -12,10 +12,14 @@ FTNAME		=	$(FTDIR)/libft.a
 FT			=	$(FTNAME)
 
 MLXDIR		=	minilibx-linux
-MLXNAME		= $(MLXDIR)/libmlx.a
-# MLXNAME		= $(MLXDIR)/libmlx_Linux.a
 MLX			=	$(MLXNAME)
+
+# mac
+# MLXNAME		= $(MLXDIR)/libmlx.a
 # MLX_FLAG	=  -lmlx -framework OpenGL -framework AppKit
+
+# linux
+MLXNAME		= $(MLXDIR)/libmlx_Linux.a
 MLX_FLAGS_LINUX	=	-L$(MLXDIR) -lmlx -lXext -lX11
 
 
@@ -44,10 +48,10 @@ OBJDIR   = obj
 OBJS  = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 
-all: $(NAME)
+all: minilibx $(NAME)
 
-$(NAME):$(OBJS) $(MLX) $(GNL) $(FT)
-		$(CC) $^ $(CFLAGS) $(MLX_FLAGS_LINUX) $(MLX_FLAG) -o $@
+$(NAME):$(OBJS) $(GNL) $(FT) $(MLX)
+		$(CC) $^ $(CFLAGS) $(MLX_FLAGS_LINUX) -o $@
 
 $(MLX):
 		$(MAKE) -C $(MLXDIR)
@@ -62,7 +66,11 @@ $(OBJDIR)/%.o: %.c
 	@mkdir -p $$(dirname $@)
 	$(CC) $(INCLUDE) $(CFLAGS) -o $@ -c $<
 
-
+minilibx:
+	@if [ ! -d "minilibx-linux" ]; then \
+		git clone https://github.com/42Paris/minilibx-linux.git; \
+	fi
+	$(MAKE) -C minilibx-linux
 
 clean:
 		$(MAKE) clean -C $(MLXDIR)
@@ -79,4 +87,4 @@ fclean: clean
 re : fclean all
 
 .PHONY:
-		all clean fclean re
+		all clean fclean re minilibx

@@ -13,16 +13,22 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "../minilibx-linux/mlx.h"
+# include <mlx.h>
 # include "get_next_line.h"
 # include "libft.h"
 
+/**
+ * linux key
+*/
 # define WINSIZ 50
 # define ESC_KEY 65307
 # define W_KEY 119
 # define S_KEY 115
 # define A_KEY 97
 # define D_KEY 100
+/**
+ * Mac key
+*/
 // # define ESC_KEY 53
 // # define W_KEY 13
 // # define S_KEY 1
