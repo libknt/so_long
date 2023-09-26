@@ -10,7 +10,7 @@ This project is a very small 2D game. It is built to make you work with textures
 
 2. Run the game:  
 
-```/so_long map [MAP_FILE.ber]```
+```/so_long [MAP_FILE.ber]```
 
 ### Reference
 - [Minilibx Linux](https://github.com/42Paris/minilibx-linux)
